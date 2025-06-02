@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buyurtmalar ro‘yxati</title>
+</head>
+<body>
+    <h1>📋 Buyurtmalar</h1>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>ID</th><th>Ism</th><th>Xabar</th><th>Status</th><th>Sanasi</th><th>Amallar</th>
+        </tr>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order[0] }}</td>
+            <td>{{ order[1] }}</td>
+            <td>{{ order[2] }}</td>
+            <td>{{ order[3] }}</td>
+            <td>{{ order[4] }}</td>
+            <td>
+                <a href="/update/{{ order[0] }}/Ko‘rib chiqilmoqda">Ko‘rib chiqilmoqda</a> |
+                <a href="/update/{{ order[0] }}/Bajarildi">Bajarildi</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
